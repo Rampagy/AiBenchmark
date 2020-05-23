@@ -5,7 +5,7 @@ if __name__=='__main__':
     parser = argparse.ArgumentParser(description='Test devices AI computational capability')
 
     parser.add_argument('-d', '--device', type=str, default='gpu', help='\'cpu\' or \'gpu\'')
-    parser.add_argument('-n', '--computations', type=int, default=1000000000, help='Number of int8, int16, int32, int64, float32, and float64 computations')
+    parser.add_argument('-n', '--number', type=int, default=125000000, help='Number of int8, int16, int32, int64, float32, and float64 computations')
     parser.add_argument('-int8', '--test_int8', action="store_true", default=False, help='Test integer 8')
     parser.add_argument('-int16', '--test_int16', action="store_true", default=False, help='Test integer 16')
     parser.add_argument('-int32', '--test_int32', action="store_true", default=False, help='Test integer 32')
@@ -33,7 +33,7 @@ if __name__=='__main__':
             args.test_nn = True
 
         print(args.device)
-        print(args.computations)
+        print(args.number)
         print(args.test_int8)
         print(args.test_int16)
         print(args.test_int32)
@@ -44,7 +44,7 @@ if __name__=='__main__':
 
         tests.start(
             args.device,
-            args.computations,
+            args.number,
             args.test_int8,
             args.test_int16,
             args.test_int32,
