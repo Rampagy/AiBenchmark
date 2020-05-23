@@ -28,8 +28,8 @@ class Tester():
 
         x = torch.randint(low=0, high=16, size=(computations, 1), dtype=torch.int8)
         m = torch.randint(low=0, high=16, size=(1, computations), dtype=torch.int8)
-        torch.mm(x, m)
-        
+        torch.mm(x, m).to(self.device)
+
         return (time.time() - int8_start)
 
 
