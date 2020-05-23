@@ -2,6 +2,7 @@
 This tool was built to test the AI capability of a device.  It test the computational power of a device by doing a number of varius math computations that are heavily used within AI.
 
 ## Installation
+Tested and verified with Python 3.8.2.
 How to install stuff. requirements.txt, pytorch.... [https://pytorch.org/get-started/locally/](https://pytorch.org/get-started/locally/)
 
 
