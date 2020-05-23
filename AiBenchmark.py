@@ -1,10 +1,11 @@
 import argparse
+import tests
 
 if __name__=='__main__':
     parser = argparse.ArgumentParser(description='Test devices AI computational capability')
 
     parser.add_argument('-d', '--device', type=str, default='gpu', help='\'cpu\' or \'gpu\'')
-    parser.add_argument('-c', '--computations', type=int, default=1000000000, help='Number of int8, int16, int32, int64, float32, and float64 computations')
+    parser.add_argument('-n', '--computations', type=int, default=1000000000, help='Number of int8, int16, int32, int64, float32, and float64 computations')
     parser.add_argument('-int8', '--test_int8', action="store_true", default=False, help='Test integer 8')
     parser.add_argument('-int16', '--test_int16', action="store_true", default=False, help='Test integer 16')
     parser.add_argument('-int32', '--test_int32', action="store_true", default=False, help='Test integer 32')
@@ -40,5 +41,16 @@ if __name__=='__main__':
         print(args.test_float32)
         print(args.test_float64)
         print(args.test_nn)
+
+        tests.start(
+            args.device,
+            args.computations,
+            args.test_int8,
+            args.test_int16,
+            args.test_int32,
+            args.test_int64,
+            args.test_float32,
+            args.test_float64,
+            args.test_nn)
     else:
         print('Invalid device. Use \'-d gpu\' or \'-d cpu\'')
