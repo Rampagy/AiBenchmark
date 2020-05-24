@@ -1,1 +1,1 @@
-python3 AiBenchmark.py
+python3 AiBenchmark.py -nn
