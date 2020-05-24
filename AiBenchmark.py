@@ -16,12 +16,12 @@ if __name__=='__main__':
     args = parser.parse_args()
 
     if args.device in ['cpu', 'gpu']:
-        if not (args.test_int8 or 
-                args.test_int16 or 
-                args.test_int32 or 
-                args.test_int64 or 
-                args.test_float32 or 
-                args.test_float64 or 
+        if not (args.test_int8 or
+                args.test_int16 or
+                args.test_int32 or
+                args.test_int64 or
+                args.test_float32 or
+                args.test_float64 or
                 args.test_nn):
             # if all tests are false (none were specified), test them all
             args.test_int8 = True
@@ -31,16 +31,6 @@ if __name__=='__main__':
             args.test_float32 = True
             args.test_float64 = True
             args.test_nn = True
-
-        print(args.device)
-        print(args.number)
-        print(args.test_int8)
-        print(args.test_int16)
-        print(args.test_int32)
-        print(args.test_int64)
-        print(args.test_float32)
-        print(args.test_float64)
-        print(args.test_nn)
 
         tests.start(
             args.device,
